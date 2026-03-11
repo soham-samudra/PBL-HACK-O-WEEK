@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SAMUDRA MEGA MART</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background-image:url("https://images.unsplash.com/photo-1542838132-92c53300491e");
+background-size:cover;
+background-position:center;
+}
+
+.overlay{
+background:rgba(0,0,0,0.6);
+min-height:100vh;
+}
+
+header{
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.container{
+display:flex;
+width:95%;
+margin:auto;
+margin-top:20px;
+}
+
+.products{
+flex:3;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.cart{
+flex:1;
+background:white;
+padding:15px;
+margin-left:20px;
+border-radius:8px;
+box-shadow:0 2px 10px rgba(0,0,0,0.3);
+height:fit-content;
+}
+
+.card{
+background:white;
+padding:15px;
+border-radius:8px;
+text-align:center;
+box-shadow:0 2px 8px rgba(0,0,0,0.3);
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:5px;
+}
+
+.old{
+text-decoration:line-through;
+color:gray;
+font-size:13px;
+}
+
+.price{
+color:green;
+font-weight:bold;
+font-size:17px;
+}
+
+button{
+background:#ff7a00;
+border:none;
+color:white;
+padding:8px 14px;
+border-radius:5px;
+cursor:pointer;
+margin-top:6px;
+}
+
+button:hover{
+background:#e56700;
+}
+
+.cart ul{
+list-style:none;
+padding:0;
+}
+
+.cart li{
+margin-bottom:10px;
+font-size:14px;
+}
+
+.remove{
+background:red;
+padding:4px 8px;
+margin-left:8px;
+font-size:12px;
+}
+
+.total{
+font-weight:bold;
+font-size:18px;
+margin-top:15px;
+color:green;
+}
+
+.pay{
+width:100%;
+margin-top:15px;
+background:#2ecc71;
+}
+
+.pay:hover{
+background:#27ae60;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<header>
+
+<h1>SAMUDRA MEGA MART</h1>
+
+<p>Quality Products, Honest Prices, Everyday Savings</p>
+
+<p>📞 8999307959 | ✉ samudra@ymail.com</p>
+
+<p>📍 DHARAMPETH SHANKAR NAGAR NAGPUR, MAHARASHTRA</p>
+
+</header>
+
+<div class="container">
+
+<div class="products">
+
+<div class="card">
+<img src="images/apples.jpg">
+<h3>Fresh Apples</h3>
+<p>Farm fresh apples full of nutrition.</p>
+<div class="old">₹200</div>
+<div class="price">₹160</div>
+<button onclick="addItem('Fresh Apples',160)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="images/oil.jpg">
+<h3>Cooking Oil</h3>
+<p>Healthy refined oil for cooking.</p>
+<div class="old">₹200</div>
+<div class="price">₹170</div>
+<button onclick="addItem('Cooking Oil',170)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="images/noodles.jpg">
+<h3>Instant Noodles</h3>
+<p>Quick and tasty noodles.</p>
+<div class="old">₹80</div>
+<div class="price">₹60</div>
+<button onclick="addItem('Instant Noodles',60)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="images/chocolate.jpg">
+<h3>Chocolate Pack</h3>
+<p>Sweet and delicious chocolates.</p>
+<div class="old">₹150</div>
+<div class="price">₹135</div>
+<button onclick="addItem('Chocolate Pack',135)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="images/biscuits.jpg">
+<h3>Snack Biscuits</h3>
+<p>Crispy biscuits for tea time.</p>
+<div class="old">₹60</div>
+<div class="price">₹49</div>
+<button onclick="addItem('Snack Biscuits',49)">Add to Cart</button>
+</div>
+
+<div class="card">
+<img src="images/rice.jpg">
+<h3>Premium Rice Pack</h3>
+<p>High quality rice.</p>
+<div class="old">₹500</div>
+<div class="price">₹350</div>
+<button onclick="addItem('Rice Pack',350)">Add to Cart</button>
+</div>
+
+</div>
+
+<div class="cart">
+
+<h2>Shopping Cart</h2>
+
+<ul id="cartItems"></ul>
+
+<div class="total">
+Total: ₹<span id="total">0</span>
+</div>
+
+<button class="pay">Pay</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let cart={}
+let total=0
+
+function addItem(name,price){
+
+if(cart[name]){
+cart[name].qty++
+}
+else{
+cart[name]={price:price,qty:1}
+}
+
+renderCart()
+
+}
+
+function removeItem(name){
+
+delete cart[name]
+
+renderCart()
+
+}
+
+function renderCart(){
+
+let cartList=document.getElementById("cartItems")
+
+cartList.innerHTML=""
+
+total=0
+
+for(let item in cart){
+
+let li=document.createElement("li")
+
+let qty=cart[item].qty
+let price=cart[item].price
+
+let itemTotal=qty*price
+
+total+=itemTotal
+
+li.innerHTML=item+" x"+qty+" - ₹"+itemTotal+
+" <button class='remove' onclick=\"removeItem('"+item+"')\">Remove</button>"
+
+cartList.appendChild(li)
+
+}
+
+document.getElementById("total").innerText=total
+
+}
+
+</script>
+
+</body>
+</html>

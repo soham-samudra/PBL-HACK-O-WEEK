@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>My Travel Blog</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#eaeaea;
+}
+
+header{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:35px;
+position:relative;
+}
+
+.profile{
+position:absolute;
+right:30px;
+top:10px;
+}
+
+.profile img{
+width:180px;
+height:180px;
+border-radius:50%;
+border:6px solid white;
+object-fit:cover;
+}
+
+header h1{
+margin:0;
+}
+
+.tagline{
+font-size:18px;
+margin-top:8px;
+}
+
+/* Transparent intro box */
+
+.intro{
+width:70%;
+margin:40px auto;
+text-align:center;
+font-size:17px;
+line-height:1.7;
+background:rgba(255,255,255,0.6);
+padding:25px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* Blog grid */
+
+.blog-container{
+width:92%;
+margin:40px auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.25);
+padding:18px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card img{
+width:100%;
+height:240px;
+object-fit:cover;
+border-radius:6px;
+}
+
+.card h3{
+margin-top:12px;
+font-size:20px;
+}
+
+.card p{
+font-size:15px;
+line-height:1.5;
+}
+
+.date{
+color:gray;
+font-size:14px;
+margin-top:10px;
+}
+
+button{
+background:#3498db;
+border:none;
+color:white;
+padding:9px 16px;
+border-radius:6px;
+cursor:pointer;
+margin-top:12px;
+font-size:15px;
+}
+
+button:hover{
+background:#217dbb;
+}
+
+footer{
+text-align:center;
+background:#2c3e50;
+color:white;
+padding:18px;
+margin-top:50px;
+font-size:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>My Travel Blog</h1>
+
+<p class="tagline">Exploring the World, One Journey at a Time</p>
+
+<div class="profile">
+<img src="profile.jpg">
+</div>
+
+</header>
+
+<div class="intro">
+
+<p>
+Hello! My name is <b>Soham Samudra</b> and I am a Computer Science student living in Nagpur, Maharashtra.
+I enjoy travelling and exploring new places whenever I get time from my studies.
+Through this travel blog I share some of my favorite travel memories, experiences
+and beautiful destinations I have visited. Travelling helps me relax,
+learn about new cultures and enjoy the beauty of nature.
+</p>
+
+</div>
+
+<div class="blog-container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+
+<h3>My Trip to Goa</h3>
+
+<p>
+Goa was an amazing trip with beautiful beaches and a relaxing environment.
+I enjoyed the sea breeze, watched sunsets and tried delicious seafood.
+The peaceful beaches made the trip unforgettable.
+</p>
+
+<div class="date">Location: Goa | June 2022</div>
+
+<button>Read More</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
+<h3>Adventure in Manali</h3>
+
+<p>
+Manali is surrounded by beautiful mountains and cool weather.
+I enjoyed trekking, exploring valleys and taking photos of the snowy peaks.
+It was one of the most adventurous trips of my life.
+</p>
+
+<div class="date">Location: Manali | January 2023</div>
+
+<button>Read More</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da">
+
+<h3>Exploring Jaipur</h3>
+
+<p>
+Jaipur, the Pink City, is full of history and culture.
+I visited famous forts and explored colorful local markets.
+The architecture and traditions made the trip very memorable.
+</p>
+
+<div class="date">Location: Jaipur | December 2024</div>
+
+<button>Read More</button>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Soham Samudra | Travel Blog</p>
+
+</footer>
+
+</body>
+
+</html>
