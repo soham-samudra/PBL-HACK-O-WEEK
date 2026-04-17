@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>College Tech Fest Event Registration</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay{
+    background-color: rgba(0,0,0,0.6);
+    min-height:100vh;
+    padding-top:40px;
+}
+
+.container{
+    width:520px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0px 0px 15px rgba(0,0,0,0.4);
+}
+
+h1{
+    text-align:center;
+    color:#333;
+    margin-bottom:20px;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:12px;
+    color:#444;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:9px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-size:14px;
+}
+
+input:focus,select:focus,textarea:focus{
+    border-color:#007BFF;
+    outline:none;
+}
+
+.buttons{
+    text-align:center;
+    margin-top:20px;
+}
+
+button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    border-radius:6px;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.submit-btn{
+    background-color:#007BFF;
+    color:white;
+}
+
+.submit-btn:hover{
+    background-color:#0056b3;
+}
+
+.reset-btn{
+    background-color:#dc3545;
+    color:white;
+}
+
+.reset-btn:hover{
+    background-color:#b52a37;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+<h1>College Tech Fest Event Registration</h1>
+
+<form>
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter your full name" required>
+
+<label>Email</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter your phone number">
+
+<label>College Name</label>
+<input type="text" placeholder="Enter your college name">
+
+<label>Department / Branch</label>
+<input type="text" placeholder="Example: Computer Science">
+
+<label>Year of Study</label>
+<select>
+<option>Select Year</option>
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
+
+<label>Select Event</label>
+<select>
+<option>Choose Event</option>
+<option>Hackathon</option>
+<option>Coding Competition</option>
+<option>Robotics Challenge</option>
+<option>Web Development Contest</option>
+<option>Tech Quiz</option>
+</select>
+
+<label>Team Size</label>
+<input type="number" min="1" max="5" placeholder="Enter team size">
+
+<label>Short Message / Notes</label>
+<textarea rows="4" placeholder="Any message or special request"></textarea>
+
+<div class="buttons">
+<button type="submit" class="submit-btn">Submit</button>
+<button type="reset" class="reset-btn">Reset</button>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>
